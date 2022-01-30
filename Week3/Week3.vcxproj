@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Ex1.cpp" />
+    <ClCompile Include="InheritanceTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Inheritance.h" />

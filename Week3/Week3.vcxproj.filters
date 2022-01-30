@@ -18,6 +18,9 @@
     <ClCompile Include="Ex1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="InheritanceTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Inheritance.h">
