@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 
-enum class Discipline {GAME_DEVELOPER, SOFTWARE_ENGINEER, ANIMATOR};
+enum class Discipline {GAME_DEVELOPER, SOFTWARE_ENGINEER, ANIMATOR, NONE};
 enum class Classification {FRESHMAN, SOPHMORE, JUNIOR, SENIOR};
 
 // base class
@@ -14,22 +14,19 @@ private:
 public:
 	Person()
 	{
-		cout << "Person constructo Called!" << endl;
+		
 		setName("");
 	}
 	Person(const string& name)
 	{
 		setName(name);
 	}
-	~Person()
-	{
-		cout << "person destrucot called" << endl;
-	}
+	~Person(){}
 	void setName(const string& name)
 	{
 		this->name = name;
 	}
-	string getName()
+	string getName() const
 	{
 		return name;
 	}
@@ -41,19 +38,22 @@ private:
 	Discipline major;
 	Person* advisor;
 public:
-	Student()
+	Student() : Person("Default")
 	{
-		cout << " Student Constructor Called" << endl;
+		setMajor(Discipline::NONE);
+		setAdvisor(new Person("N/A"));
 	}
-	~Student()
+	Student(const string& name, Discipline major, Person* advisor) : Person(name)
 	{
-		cout << "student destructor called" << endl;
+		setMajor(major);
+		setAdvisor(advisor);
 	}
+	~Student(){}
 	void setMajor(Discipline major)
 	{
 		this->major = major;
 	}
-	Discipline getMajor()
+	Discipline getMajor() const
 	{
 		return major;
 	}
@@ -61,7 +61,7 @@ public:
 	{
 		this->advisor = advisor;
 	}
-	Person* getAdvisor()
+	Person* getAdvisor() const 
 	{
 		return advisor;
 	}
@@ -73,20 +73,49 @@ class Faculty : public Person
 private:
 	Discipline department;
 public:
-	Faculty() 
+	Faculty() : Person("DELAULT")
 	{
-		cout << "Faculty contructor called " << endl;
+		setDepartment(Discipline::NONE);
 	}
-	~Faculty() 
+	Faculty(const string& name, Discipline department) : Person(name)
 	{
-		cout << "faculty destructor called" << endl;
+		setDepartment(department);
 	}
+	~Faculty(){}
+	
 	void setDepartment(Discipline department)
 	{
 		this->department = department;
 	}
-	Discipline getDepartment()
+	Discipline getDepartment() const
 	{
 		return department;
+	}
+};
+
+class TFaculty : public Faculty
+{
+private:
+	string title;
+public:
+	TFaculty() : Faculty()
+	{
+		setTitle("_");
+	}
+	TFaculty(string fname, Discipline d, string title) : Faculty(fname, d)
+	{
+		setTitle(title);
+	}
+	void setTitle(string title)
+	{
+		this->title = title;
+	}
+	string getTitle() const
+	{
+		return title;
+	}
+	string getName() const
+	{
+		return getTitle() + Person::getName();
 	}
 };

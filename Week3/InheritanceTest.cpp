@@ -2,38 +2,31 @@
 #include "Inheritance.h"
 using namespace std;
 
-const string disc[] = { "Game Developer", "Software Engineer", " Animator" };
+const string disc[] = { "Game Developer", "Software Engineer", " Animator", "None"};
 
 int main()
 {
-	Person* p = new Person();
-	Student* s = new Student();
-	Faculty* f = new Faculty();
+	Person* p = new Person("Justin Bennett");
+	Student* s = new Student("Jane Doe", Discipline::GAME_DEVELOPER, p);
+	Faculty* f = new Faculty("Bob Dole", Discipline::SOFTWARE_ENGINEER );
+	TFaculty* t = new TFaculty("Lisa Simpson", Discipline::ANIMATOR, "Lord Commandor");
 
 	// Init and print person
-	p->setName("Justin Bennett");
 
 	cout << "Hello, " << p->getName() << endl;
 
-	// init and print studen
-	s->setName("Jane Doe");
-	s->setMajor(Discipline::GAME_DEVELOPER);
-	s->setAdvisor(p);
-
 	cout << "Hello, " << s->getName() << ". You are a " << disc[static_cast<int>(s->getMajor())] << endl;
-
-	//Init and print faculty
-	f->setName("Mr Bob Dole");
-	f->setDepartment(Discipline::SOFTWARE_ENGINEER);
 
 	cout << "Hello, " << f->getName() << ". Your department is " << disc[static_cast<int>(f->getDepartment())] << endl;
 
+	cout << "Hello, " << t->getName() << ". Your department is " << disc[static_cast<int>(t->getDepartment())] << endl;
 
-
+	delete t;
 	delete p;
 	delete s;
 	delete f;
 
+	t = nullptr;
 	p = nullptr;
 	s = nullptr;
 	f = nullptr;
