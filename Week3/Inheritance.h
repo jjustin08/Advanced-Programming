@@ -14,6 +14,7 @@ private:
 public:
 	Person()
 	{
+		cout << "Person constructo Called!";
 		setName("");
 	}
 	Person(const string& name)

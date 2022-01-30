@@ -28,5 +28,15 @@ int main()
 
 	cout << "Hello, " << f->getName() << ". Your department is " << disc[static_cast<int>(f->getDepartment())] << endl;
 
+
+
+	delete p;
+	delete s;
+	delete f;
+
+	p = nullptr;
+	s = nullptr;
+	f = nullptr;
+
 	return 0;
 }
