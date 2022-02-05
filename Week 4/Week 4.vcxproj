@@ -140,11 +140,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Inheritance.h" />
+    <ClInclude Include="Length.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AbstractClassTest.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="Length.cpp" />
+    <ClCompile Include="OperatingOverloadingTest.cpp" />
     <ClCompile Include="PolymorphismTest.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>

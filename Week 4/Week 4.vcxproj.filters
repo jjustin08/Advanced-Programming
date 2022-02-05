@@ -18,12 +18,21 @@
     <ClInclude Include="Inheritance.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Length.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PolymorphismTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="AbstractClassTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatingOverloadingTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Length.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
