@@ -50,5 +50,5 @@ istream& operator>>(istream& in, Length& a)
 	in >> feet;
 	cout << "Enter inches: \n";
 	in >> inches;
-
+	return in;
 }

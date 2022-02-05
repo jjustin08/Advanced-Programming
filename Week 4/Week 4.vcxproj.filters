@@ -21,6 +21,9 @@
     <ClInclude Include="Length.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="intArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PolymorphismTest.cpp">
@@ -33,6 +36,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Length.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IntArray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ArrayNotationTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
