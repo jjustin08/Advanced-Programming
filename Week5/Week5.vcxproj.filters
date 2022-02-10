@@ -27,9 +27,15 @@
     <ClCompile Include="Example 4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Example5.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SimpleVector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SearchableVector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

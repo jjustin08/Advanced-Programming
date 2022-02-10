@@ -39,7 +39,7 @@ template <class T>
 SimpleVector<T>::SimpleVector(const SimpleVector& obj)
 {
 	arraySize = obj.arraySize;
-	aptr = new int[arraySize];
+	aptr = new T[arraySize];
 	for (int i = 0; i < arraySize; i++)
 	{
 		aptr[i] = obj.aptr[i];
