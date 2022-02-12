@@ -139,12 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CreatureBase.cpp" />
+    <ClCompile Include="AnimationFrame.cpp" />
+    <ClCompile Include="Creatures.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AnimationFrame.h" />
-    <ClInclude Include="CreatureBase.h" />
     <ClInclude Include="Creatures.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -18,15 +18,15 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CreatureBase.cpp">
+    <ClCompile Include="Creatures.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationFrame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Creatures.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CreatureBase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AnimationFrame.h">
