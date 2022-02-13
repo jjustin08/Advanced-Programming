@@ -6,11 +6,12 @@ using namespace std;
 class AnimationFrame
 {
 private:
-	string line, fileName;
+	string  fileName, line;
+	string frame[9];
 public:
+	AnimationFrame();
 	AnimationFrame(string fileName);
 	~AnimationFrame();
-	void move(int location);
-	void getFrame(int location);
+	string* getFrame(string fileName);
 	
 };
