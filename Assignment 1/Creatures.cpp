@@ -25,11 +25,7 @@ void Creature::loadFrames()
 	temp = m_ani->getFrame(getFileName());
 	for (int i = 0; i < 9; i++)
 	{
-		
-		
 			m_frame[i] = temp[i];
-			cout << m_frame[i] << endl;
-		
 	}
 }
 
@@ -63,21 +59,18 @@ void Creature::move()
 
 void Creature::animate()
 {
-	while (true)
+	while (m_location < 10)
 	{
-		for (int i = 0; i < 3; i++)
+		for (int i = 0; i < 9; i++)
 		{
-
-
-
+			move();
+			cout << m_frame[i] << endl;
+			if (i == 2 || i == 5 || i == 8)
+			{
+				std::this_thread::sleep_for(1s);
+				system("cls");
+				m_location++;
+			}
 		}
-		move();
-		
-		move();
-		
-		move();
-		
-		std::this_thread::sleep_for(1s);
-		system("cls");
 	}
 }

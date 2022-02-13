@@ -11,15 +11,8 @@ int main()
 	Creature worm;
 
 	// display creatues one after another
-	
+	worm.animate();
 		
-
-	//cout << *first[0][0] << endl;
-
-	for (int i = 0; i < 3; i++)
-	{
-		
-	}
 
 	return 0;
 }

@@ -23,7 +23,6 @@ string* AnimationFrame::getFrame(string fileName)
 	creature.open(fileName, ios::in);
 	if (creature.is_open())
 	{
-		cout << "File loaded" << endl;
 		for (int i = 0; i < 9; i++)
 		{
 			getline(creature, line);
