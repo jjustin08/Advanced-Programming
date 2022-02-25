@@ -6,6 +6,7 @@
 
 AnimationFrame::AnimationFrame()
 {
+	this->fileName = "creature1.txt";
 }
 
 AnimationFrame::AnimationFrame(string fileName)

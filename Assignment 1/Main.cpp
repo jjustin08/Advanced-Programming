@@ -8,11 +8,21 @@ using namespace std;
 int main()
 {
 	// create all creatures
-	Creature worm;
+	Cat Leo;
+    Snail Slime;
+    Snake Snake;
+    Duck Quak;
+    Rocket Ship;
+    Truck car;
 
 	// display creatues one after another
-	worm.animate();
-		
+	Leo.animate();
+    Slime.animate();
+    Snake.animate();
+    Quak.animate();
+    Ship.animate();
+    car.animate();
 
+    
 	return 0;
 }

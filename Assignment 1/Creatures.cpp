@@ -4,7 +4,7 @@
 Creature::Creature()
 {
 	setLocation(0);
-	setFileName("creature1.txt");
+	setFileName("creature3.txt");
 	m_ani = new AnimationFrame(getFileName());
 	loadFrames();
 }
@@ -51,15 +51,15 @@ void Creature::setFileName(string fileName)
 
 void Creature::move()
 {
-	for (int x = 0; x < m_location; x++)
+	for (int x = 0; x < getLocation(); x++)
 	{
-		cout << "\t";
+		cout << "   ";
 	}
 }
 
 void Creature::animate()
 {
-	while (m_location < 10)
+	while (m_location < 20)
 	{
 		for (int i = 0; i < 9; i++)
 		{
@@ -67,10 +67,46 @@ void Creature::animate()
 			cout << m_frame[i] << endl;
 			if (i == 2 || i == 5 || i == 8)
 			{
-				std::this_thread::sleep_for(1s);
+				std::this_thread::sleep_for(0.3s);
 				system("cls");
 				m_location++;
 			}
 		}
 	}
 }
+
+Cat::Cat() : Creature(0, "creature1.txt")
+{
+}
+
+Cat::~Cat(){}
+
+Snail::Snail() : Creature(0, "creature2.txt")
+{
+}
+
+Snail::~Snail() {}
+
+Snake::Snake() : Creature(0, "creature3.txt")
+{
+}
+
+Snake::~Snake(){}
+
+Duck::Duck() : Creature(0, "creature4.txt")
+{
+}
+
+Duck::~Duck(){}
+
+Rocket::Rocket() : Creature(0, "creature5.txt")
+{
+}
+
+Rocket::~Rocket(){}
+
+Truck::Truck() : Creature(0, "creature6.txt")
+{
+}
+
+Truck::~Truck(){}

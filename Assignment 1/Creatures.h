@@ -27,11 +27,44 @@ public:
 	void animate();
 };
 
-class Dragon : public Creature
+class Cat : public Creature
 {
 public:
-	Dragon();
-	~Dragon();
+	Cat();
+	~Cat();
+};
 
+class Snail : public Creature
+{
+public:
+	Snail();
+	~Snail();
+};
 
+class Snake : public Creature
+{
+public:
+	Snake();
+	~Snake();
+};
+
+class Duck : public Creature
+{
+public:
+	Duck();
+	~Duck();
+};
+
+class Rocket : public Creature
+{
+public:
+	Rocket();
+	~Rocket();
+};
+
+class Truck : public Creature
+{
+public:
+	Truck();
+	~Truck();
 };

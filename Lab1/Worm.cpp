@@ -1,9 +1,14 @@
+#include "..\Assignment 1\Creatures.h"
 #include <iostream>
 #include "Worm.h"
 
 Worm::Worm()
 {
 	location = 10;
+}
+
+Worm::~Worm()
+{
 }
 
 Worm::Worm(int location)
