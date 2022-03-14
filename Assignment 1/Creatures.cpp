@@ -73,6 +73,7 @@ void Creature::animate()
 			}
 		}
 	}
+	m_location = 0;
 }
 
 Cat::Cat() : Creature(0, "creature1.txt")
