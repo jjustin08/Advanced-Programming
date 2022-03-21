@@ -59,9 +59,30 @@ SimpleVector<T>::~SimpleVector()
 	aptr = nullptr;
 }
 
+template<class T>
+inline void SimpleVector<T>::push_back(T element)
+{
+	arraySize++;
+	T* temp = new T[arraySize];
+	for (int i = 0; i < arraySize; i++)
+	{
+		temp[i] = aptr[i];
+	}
+	temp[arraySize - 1] = element;
+	aptr = temp;
+}
 
-
-
+template<class T>
+inline void SimpleVector<T>::pop_back()
+{
+	arraySize--;
+	T* temp = new T[arraySize];
+	for (int i = 0; i < arraySize; i++)
+	{
+		temp[i] = aptr[i];
+	}
+	aptr = temp;
+}
 
 // subError function
 template <class T>
