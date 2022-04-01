@@ -144,13 +144,16 @@
     <ClInclude Include="SortedNumList.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Example 4.cpp" />
     <ClCompile Include="Example1.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="Example2.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Example3.cpp" />
+    <ClCompile Include="Example3.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="NumList.cpp" />
     <ClCompile Include="SortedNumList.cpp" />
   </ItemGroup>
