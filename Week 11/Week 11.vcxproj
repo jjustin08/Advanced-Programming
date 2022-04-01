@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="LinkedList.h" />
     <ClInclude Include="NumList.h" />
     <ClInclude Include="SortedNumList.h" />
   </ItemGroup>
@@ -146,7 +147,10 @@
     <ClCompile Include="Example1.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Example2.cpp" />
+    <ClCompile Include="Example2.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Example3.cpp" />
     <ClCompile Include="NumList.cpp" />
     <ClCompile Include="SortedNumList.cpp" />
   </ItemGroup>
