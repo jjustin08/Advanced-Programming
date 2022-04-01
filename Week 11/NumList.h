@@ -4,6 +4,7 @@ using namespace std;
 
 class NumList
 {
+protected:
 	// represent one node
 	struct ListNode
 	{

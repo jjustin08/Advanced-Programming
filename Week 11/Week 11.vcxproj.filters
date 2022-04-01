@@ -18,12 +18,21 @@
     <ClInclude Include="NumList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="SortedNumList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="NumList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Example1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Example2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SortedNumList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
