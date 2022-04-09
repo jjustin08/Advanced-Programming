@@ -139,10 +139,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="DynIntQueue.h" />
+    <ClInclude Include="DynIntStack.h" />
+    <ClInclude Include="IntQueue.h" />
     <ClInclude Include="IntStack.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Example1.cpp" />
+    <ClCompile Include="DynIntQueue.cpp" />
+    <ClCompile Include="DynIntStack.cpp" />
+    <ClCompile Include="Example 2.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Example 3.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Example 4.cpp" />
+    <ClCompile Include="Example1.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="IntQueue.cpp" />
     <ClCompile Include="IntStack.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

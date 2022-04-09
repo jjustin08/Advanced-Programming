@@ -18,12 +18,39 @@
     <ClInclude Include="IntStack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="DynIntStack.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IntQueue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DynIntQueue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="IntStack.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Example1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Example 2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DynIntStack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IntQueue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Example 3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DynIntQueue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Example 4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
