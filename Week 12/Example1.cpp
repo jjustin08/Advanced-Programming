@@ -8,21 +8,33 @@ int main()
 	int values[] = { 5,10,15,20,25 };
 	int value;
 
-	cout << "pushing... \n";
-	for (int i = 0; i < 5; i++)
+	try
 	{
-		cout << values[i] << " ";
-		stack.push(values[i]);
-	}
+		cout << "pushing... \n";
+		for (int i = 0; i < 5; i++)
+		{
+			cout << values[i] << " ";
+			stack.push(values[i]);
+		}
+		//stack.push(30);
 
-	cout << "\nPopping..\n";
-	while (!stack.isEmpty())
-	{
+		cout << "\nPopping..\n";
+		while (!stack.isEmpty())
+		{
+			stack.pop(value);
+			cout << value << " ";
+		}
 		stack.pop(value);
-		cout << value << " ";
+		cout << endl;
+
 	}
-	cout << endl;
-
-
+	catch (IntStack::Overflow)
+	{
+		cout << "\noverflow exption\n";
+	}
+	catch (IntStack::Underflow)
+	{
+		cout << "\nunderflow exption\n";
+	}
 	return 0;
 }
