@@ -35,9 +35,11 @@ int main()
     // added to them
 
     // Peek at the first character
-    ch = inFile.peek();
+    ch = inFile.get();
+   
     while (ch != EOF)
     {
+        inFile.unget();
         // Examine current character
         if (isdigit(ch))
         {
@@ -52,7 +54,7 @@ int main()
             outFile << ch;
         }
         // Peek at the next character from input file
-        ch = inFile.peek();
+        ch = inFile.get();
     }
     // Close the files
     inFile.close();
