@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-	IntRange range(5, 10);
+	IntRange range(2, 15);
 	int userValue;
 
 	cout << "Enter a value in the range of " << range.getLower() << " - " << range.getUpper() << ": ";
@@ -14,9 +14,13 @@ int main()
 		userValue = range.getUserInput();
 		cout << "You entered " << userValue << endl;
 	}
-	catch (IntRange::OutOfRange)
+	catch (IntRange::TooHigh)
 	{
-		cout << "That value is out of range.\n";
+		cout << "That value is too high.\n";
+	}
+	catch (IntRange::TooLow)
+	{
+		cout << "That value is too low.\n";
 	}
 
 	cout << "End of program!\n";
