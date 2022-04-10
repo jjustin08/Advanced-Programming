@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Stuff">
+      <UniqueIdentifier>{01e3cac9-5428-4bf7-8f20-51c9fa92aead}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -21,9 +24,45 @@
     <ClCompile Include="Engine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>Stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="Objects.cpp">
+      <Filter>Stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="Room.cpp">
+      <Filter>Stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="Story.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects.h">
+      <Filter>Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="Room.h">
+      <Filter>Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="Story.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

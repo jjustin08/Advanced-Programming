@@ -1,7 +1,7 @@
 #include "Engine.h"
 
 
-Engine::Engine() : name("BOB")
+Engine::Engine()
 {
 
 	start();
@@ -13,10 +13,12 @@ Engine::~Engine()
 
 void Engine::start()
 {
+	constructWorld();
+
 	cout << "Hello welcome\nEnter your name: ";
 	string s;
 	cin >> s;
-	setName(s);
+	player->setName(s);
 
 	cycle();
 }
@@ -32,10 +34,16 @@ void Engine::playerInput()
 void Engine::cycle()
 {
 	system("cls");
-
+	story->read();
 
 
 
 	playerInput();
 	cycle();
+}
+
+void Engine::constructWorld()
+{
+	player = new Player();
+	story = new Story();
 }

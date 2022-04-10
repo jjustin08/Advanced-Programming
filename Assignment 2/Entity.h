@@ -36,6 +36,5 @@ public:
 	virtual void Take() {}
 	virtual void Use() {}
 	virtual void Attack() {}
-	
-};
 
+};

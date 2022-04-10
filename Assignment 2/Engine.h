@@ -2,27 +2,31 @@
 #include <iostream>
 #include <string>
 #include <stdlib.h>
+#include <fstream>
+#include "Player.h"
+#include "Story.h"
 using namespace std;
 
 class Engine
 {
 private:
-	string name;
-
-
+	Player* player;
+	Story* story;
 public:
 	//constructor
 	Engine();
 	~Engine();
 	//getter
-	string getName() { return name; }
+
 
 	//setter
-	void setName(string name) { this->name = name; }
+
+	
 
 	// public member functions
 	void start();
 	void playerInput();
 	void cycle();
+	void constructWorld();
 
 };
