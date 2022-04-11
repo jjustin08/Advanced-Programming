@@ -1,6 +1,6 @@
 Start Room
 This room is where you start
-Leave,@
+leave,@
 @
 Chair.txt,@
 Glass.txt,@

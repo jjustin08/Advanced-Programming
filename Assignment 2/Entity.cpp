@@ -44,3 +44,36 @@ void Entity::loadFile(string fileName)
 
 
 }
+
+void Entity::command(string com)
+{
+	if (com == "sit")
+	{
+		Sit();
+	}
+	/*else if ()
+	{
+
+	}
+	else if ()
+	{
+
+	}
+	else if ()
+	{
+
+	}
+	else if ()
+	{
+
+	}
+	else if ()
+	{
+
+	}
+	else if ()
+	{
+
+	}*/
+
+}

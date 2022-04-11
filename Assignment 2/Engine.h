@@ -6,6 +6,7 @@
 #include "Player.h"
 #include "Story.h"
 #include "Room.h"
+#include "Entity.h"
 using namespace std;
 
 class Engine
@@ -30,6 +31,7 @@ public:
 	void start();
 	void playerInput();
 	void cycle();
+	void loadEntities();
 	void constructWorld();
 
 };

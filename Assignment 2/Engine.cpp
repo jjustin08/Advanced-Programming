@@ -33,42 +33,34 @@ void Engine::playerInput()
 		if (command == com1 + " " + com2)
 		{
 			worked = true;
-
 		}
-		
-
 	}
 	if (!worked)
 	{
 		string error = "Invalid command entered\n";
 		throw error;
 	}
+	if (worked)
+	{
+		// do command
+		for (auto stuff : room->getStuff())
+		{
+			if (stuff->getName() == com2)
+			{
+				stuff->command(com1);
+			}
+		}
+	}
 }
 
 void Engine::cycle()
 {
-	//system("cls");
+	system("cls");
+	availableCommands.clear();
 	// interface
 	cout << "Available commands:" << endl;
 	cout << "---------------------" << endl;
-	//objects in room
-	for (auto obj : room->getObjects())
-	{
-		for (auto action : obj->getActions())
-		{
-			availableCommands.push_back(action+" "+obj->getName());
-			cout << availableCommands.back() << endl;
-		}
-	}
-	//items in room
-	for (auto iti : room->getItems())
-	{
-		for (auto action : iti->getActions())
-		{
-			availableCommands.push_back(action + " " + iti->getName());
-			cout << availableCommands.back() << endl;
-		}
-	}
+	loadEntities();
 	cout << "---------------------" << endl;
 	
 	bool cont = false;
@@ -87,7 +79,21 @@ void Engine::cycle()
 		}
 	}
 
+	system("pause");
 	cycle();
+}
+
+void Engine::loadEntities()
+{
+	// put inventor stuff here later
+	for (auto stuff : room->getStuff())
+	{
+		for (auto action : stuff->getActions())
+		{
+			availableCommands.push_back(action + " " + stuff->getName());
+			cout << availableCommands.back() << endl;
+		}
+	}
 }
 
 void Engine::constructWorld()

@@ -15,15 +15,12 @@ vector<Room*> Room::getRooms()
 	return connectingRooms;
 }
 
-vector<Object*> Room::getObjects()
+vector<Entity*> Room::getStuff()
 {
-	return objects;
+	return stuff;
 }
 
-vector<Item*> Room::getItems()
-{
-	return items;
-}
+
 
 void Room::loadFile(string fileName)
 {
@@ -69,7 +66,7 @@ void Room::loadFile(string fileName)
 		file.unget();
 		getline(file, word, ',');
 		Object* obj = new Object("Objects/" + word);
-		addObject(obj);
+		addStuff(obj);
 		word = file.get();
 	}
 	// add items
@@ -80,7 +77,7 @@ void Room::loadFile(string fileName)
 		file.unget();
 		getline(file, word, ',');
 		Item* iti = new Item("Items/" + word);
-		addItem(iti);
+		addStuff(iti);
 		word = file.get();
 	}
 }
@@ -90,17 +87,13 @@ void Room::addConnectionRoom(Room* room)
 	connectingRooms.push_back(room);
 }
 
-void Room::addObject(Object* obj)
+void Room::addStuff(Entity* st)
 {
-	objects.push_back(obj);
+	stuff.push_back(st);
 }
 
-void Room::addItem(Item* i)
-{
-	items.push_back(i);
-}
 
 void Room::removeItem(int place)
 {
-	items.erase(items.begin() + place - 1);
+	stuff.erase(stuff.begin() + place - 1);
 }

@@ -30,6 +30,7 @@ public:
 	virtual void loadFile(string fileName);
 	// virtual action functions
 	// add more when needed
+	void command(string com);
 	void examine() { cout << description; }
 	virtual void Open() {}
 	virtual void Close() {}
@@ -37,5 +38,6 @@ public:
 	virtual void Take() {}
 	virtual void Use() {}
 	virtual void Attack() {}
+	virtual void Sit() { cout << "you sat\n"; }
 
 };
