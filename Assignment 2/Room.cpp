@@ -10,7 +10,7 @@ Room::~Room()
 {
 }
 
-vector<Room*> Room::getRooms()
+vector<string> Room::getRooms()
 {
 	return connectingRooms;
 }
@@ -54,8 +54,7 @@ void Room::loadFile(string fileName)
 	{
 		file.unget();
 		getline(file, word, ',');
-		Room* room = new Room("Rooms/"+word);
-		addConnectionRoom(room);
+		addConnectionRoom(word);
 		word = file.get();
 	}
 	// add objects
@@ -65,7 +64,7 @@ void Room::loadFile(string fileName)
 	{
 		file.unget();
 		getline(file, word, ',');
-		Object* obj = new Object("Objects/" + word);
+		Object* obj = new Object("Objects/" + word +".txt");
 		addStuff(obj);
 		word = file.get();
 	}
@@ -76,13 +75,13 @@ void Room::loadFile(string fileName)
 	{
 		file.unget();
 		getline(file, word, ',');
-		Item* iti = new Item("Items/" + word);
+		Item* iti = new Item("Items/" + word + ".txt");
 		addStuff(iti);
 		word = file.get();
 	}
 }
 
-void Room::addConnectionRoom(Room* room)
+void Room::addConnectionRoom(string room)
 {
 	connectingRooms.push_back(room);
 }

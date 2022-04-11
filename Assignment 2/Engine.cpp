@@ -42,6 +42,16 @@ void Engine::playerInput()
 	}
 	if (worked)
 	{
+		if (com1 == "go")
+		{
+			for (auto door : room->getRooms())
+			{
+				if (com2 == door)
+				{
+					room = new Room("Rooms/" +door+ ".txt");
+				}
+			}
+		}
 		// do command
 		for (auto stuff : room->getStuff())
 		{
@@ -93,6 +103,11 @@ void Engine::loadEntities()
 			availableCommands.push_back(action + " " + stuff->getName());
 			cout << availableCommands.back() << endl;
 		}
+	}
+	for (auto door : room->getRooms())
+	{
+		availableCommands.push_back("go "+ door);
+		cout << availableCommands.back() << endl;
 	}
 }
 
