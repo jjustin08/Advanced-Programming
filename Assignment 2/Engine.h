@@ -5,6 +5,7 @@
 #include <fstream>
 #include "Player.h"
 #include "Story.h"
+#include "Room.h"
 using namespace std;
 
 class Engine
@@ -12,6 +13,8 @@ class Engine
 private:
 	Player* player;
 	Story* story;
+	Room* room;
+	vector<string> availableCommands;
 public:
 	//constructor
 	Engine();

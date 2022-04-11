@@ -27,7 +27,7 @@ public:
 	void AddAction(string act) { actions.push_back(act); }
 
 	// public member functions
-	virtual void loadFile(string file);
+	virtual void loadFile(string fileName);
 	// virtual action functions
 	// add more when needed
 	void examine() { cout << description; }

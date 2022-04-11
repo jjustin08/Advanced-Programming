@@ -52,6 +52,7 @@ void Room::loadFile(string fileName)
 	}
 	// add connection rooms
 	word = file.get();
+	word = file.get();
 	while (word != "@")
 	{
 		file.unget();
@@ -62,6 +63,7 @@ void Room::loadFile(string fileName)
 	}
 	// add objects
 	word = file.get();
+	word = file.get();
 	while (word != "@")
 	{
 		file.unget();
@@ -71,6 +73,7 @@ void Room::loadFile(string fileName)
 		word = file.get();
 	}
 	// add items
+	word = file.get();
 	word = file.get();
 	while (word != "@")
 	{

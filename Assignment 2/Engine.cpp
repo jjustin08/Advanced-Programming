@@ -26,19 +26,67 @@ void Engine::start()
 void Engine::playerInput()
 {
 	string com1, com2;
-
+	bool worked = false;
 	cin >> com1 >> com2;
-	// try and catch if input is valid
+	for (auto command : availableCommands)
+	{
+		if (command == com1 + " " + com2)
+		{
+			worked = true;
+
+		}
+		
+
+	}
+	if (!worked)
+	{
+		string error = "Invalid command entered\n";
+		throw error;
+	}
 }
 
 void Engine::cycle()
 {
-	system("cls");
-	story->read();
+	//system("cls");
+	// interface
+	cout << "Available commands:" << endl;
+	cout << "---------------------" << endl;
+	//objects in room
+	for (auto obj : room->getObjects())
+	{
+		for (auto action : obj->getActions())
+		{
+			availableCommands.push_back(action+" "+obj->getName());
+			cout << availableCommands.back() << endl;
+		}
+	}
+	//items in room
+	for (auto iti : room->getItems())
+	{
+		for (auto action : iti->getActions())
+		{
+			availableCommands.push_back(action + " " + iti->getName());
+			cout << availableCommands.back() << endl;
+		}
+	}
+	cout << "---------------------" << endl;
+	
+	bool cont = false;
+	while (!cont)
+	{
+		cont = true;
+		try
+		{
+			cout << "Enter command:" << endl;
+			playerInput();
+		}
+		catch (string ex)
+		{
+			cout << ex;
+			cont = false;
+		}
+	}
 
-
-
-	playerInput();
 	cycle();
 }
 
@@ -46,4 +94,5 @@ void Engine::constructWorld()
 {
 	player = new Player();
 	story = new Story();
+	room = new Room("Rooms/StartRoom.txt");
 }
