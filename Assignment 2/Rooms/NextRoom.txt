@@ -1,6 +1,6 @@
 Next Room
 This is the next room ver exciting
-Leave,@
-StartRoom,@
-Painting,@
+leave,@
+startroom,@
+painting,@
 knife,@

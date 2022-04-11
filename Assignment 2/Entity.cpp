@@ -51,29 +51,82 @@ void Entity::command(string com)
 	{
 		Sit();
 	}
-	/*else if ()
+	else if (com == "open")
 	{
-
+		Open();
 	}
-	else if ()
+	else if (com == "close")
 	{
-
+		Close();
 	}
-	else if ()
+	else if (com == "take")
 	{
-
+		Take();
 	}
-	else if ()
+	else if (com == "use")
 	{
-
+		Use();
 	}
-	else if ()
+	else if (com == "break")
 	{
-
+		Break();
 	}
-	else if ()
+	else if (com == "drink")
 	{
+		Drink();
+	}
+	else if (com == "throw")
+	{
+		Throw();
+	}
 
-	}*/
+}
 
+void Entity::Open()
+{
+	cout << "You open " << getName() << ".\n";
+}
+
+void Entity::Close()
+{
+	cout << "You close " << getName() << ".\n";
+}
+
+void Entity::Go()
+{
+	cout << "You go " << getName() << ".\n";
+}
+
+void Entity::Take()
+{
+	cout << "You take the " << getName() << ".\n";
+}
+
+void Entity::Use()
+{
+	cout << "You use " << getName() << ".\n";
+}
+
+void Entity::Attack()
+{
+}
+
+void Entity::Throw()
+{
+	cout << "You throw " << getName() << ".\n";
+}
+
+void Entity::Break()
+{
+	cout << "You break " << getName() << ".\n";
+}
+
+void Entity::Drink()
+{
+	cout << "You drink " << getName() << ".\n";
+}
+
+void Entity::Sit()
+{
+	cout << "You sit on the " << getName() << ".\n";
 }

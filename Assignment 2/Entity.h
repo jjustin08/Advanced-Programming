@@ -31,13 +31,16 @@ public:
 	// virtual action functions
 	// add more when needed
 	void command(string com);
-	void examine() { cout << description; }
-	virtual void Open() {}
-	virtual void Close() {}
-	virtual void Go() {}
-	virtual void Take() {}
-	virtual void Use() {}
-	virtual void Attack() {}
-	virtual void Sit() { cout << "you sat\n"; }
+	void examine() { cout << description << endl; }
+	virtual void Open();
+	virtual void Close();
+	virtual void Go();
+	virtual void Take();
+	virtual void Use();
+	virtual void Attack();
+	virtual void Throw();
+	virtual void Break();
+	virtual void Drink();
+	virtual void Sit();
 
 };

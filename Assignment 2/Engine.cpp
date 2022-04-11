@@ -42,6 +42,7 @@ void Engine::playerInput()
 	}
 	if (worked)
 	{
+		// go to new room
 		if (com1 == "go")
 		{
 			for (auto door : room->getRooms())
@@ -57,7 +58,15 @@ void Engine::playerInput()
 		{
 			if (stuff->getName() == com2)
 			{
-				stuff->command(com1);
+				if (com1 == "examine")
+				{
+					stuff->examine();
+				}
+				else
+				{
+					stuff->command(com1);
+				}
+				
 			}
 		}
 	}
@@ -98,6 +107,8 @@ void Engine::loadEntities()
 	// put inventor stuff here later
 	for (auto stuff : room->getStuff())
 	{
+		availableCommands.push_back("examine " + stuff->getName());
+		cout << availableCommands.back() << endl;
 		for (auto action : stuff->getActions())
 		{
 			availableCommands.push_back(action + " " + stuff->getName());
