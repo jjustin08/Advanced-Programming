@@ -1,0 +1,3 @@
+Wooden chair
+Normal boring wood chair
+Sit,@

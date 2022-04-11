@@ -33,7 +33,7 @@
     <ClCompile Include="Entity.cpp">
       <Filter>Stuff</Filter>
     </ClCompile>
-    <ClCompile Include="Objects.cpp">
+    <ClCompile Include="Object.cpp">
       <Filter>Stuff</Filter>
     </ClCompile>
     <ClCompile Include="Room.cpp">
@@ -56,7 +56,7 @@
     <ClInclude Include="Item.h">
       <Filter>Stuff</Filter>
     </ClInclude>
-    <ClInclude Include="Objects.h">
+    <ClInclude Include="Object.h">
       <Filter>Stuff</Filter>
     </ClInclude>
     <ClInclude Include="Room.h">

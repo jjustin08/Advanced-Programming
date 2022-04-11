@@ -12,6 +12,7 @@ private:
 	vector<string> actions;
 public:
 	// constructor
+	Entity();
 	Entity(string file);
 	~Entity();
 
@@ -29,7 +30,7 @@ public:
 	virtual void loadFile(string file);
 	// virtual action functions
 	// add more when needed
-	virtual void examine() {}
+	void examine() { cout << description; }
 	virtual void Open() {}
 	virtual void Close() {}
 	virtual void Go() {}

@@ -17,12 +17,12 @@ void Story::read()
 
 void Story::loadStory()
 {
-	file.open("Data/Story.txt");
-	// check if the filestream is opened
+	file.open("Story.txt");
+
 	if (!file)
 	{
-		// file was not found or opened correctly
 		cout << "the file was not found." << endl;
 	}
+
 	getline(file, para, '@');
 }

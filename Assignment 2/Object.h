@@ -3,13 +3,14 @@
 #include <iostream>
 #include <string>
 using namespace std;
-class Item : public Entity
+class Object : public Entity
 {
 private:
 
 public:
-	Item(string fileName);
-	~Item();
+	Object(string fileName);
+	~Object();
 
+	void loadFile(string fileName);
 };
 

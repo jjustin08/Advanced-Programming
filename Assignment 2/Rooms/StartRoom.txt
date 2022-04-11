@@ -1,0 +1,6 @@
+Start Room
+This room is where you start
+Leave,@
+@
+Chair.txt,@
+Glass.txt,@

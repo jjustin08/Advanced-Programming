@@ -1,6 +1,10 @@
 #include "Entity.h"
 #include <fstream>
 
+Entity::Entity()
+{
+}
+
 Entity::Entity(string file)
 {
 	loadFile(file);
