@@ -20,12 +20,6 @@ public:
 	//constructor
 	Engine();
 	~Engine();
-	//getter
-
-
-	//setter
-
-	
 
 	// public member functions
 	void start();

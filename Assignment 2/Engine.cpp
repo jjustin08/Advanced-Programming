@@ -3,18 +3,15 @@
 
 Engine::Engine()
 {
-
 	start();
 }
 
-Engine::~Engine()
-{
-}
+Engine::~Engine(){}
 
 void Engine::start()
 {
 	constructWorld();
-
+	// intro setting name
 	cout << "Hello welcome\nEnter your name: ";
 	string s;
 	cin >> s;
@@ -25,9 +22,11 @@ void Engine::start()
 
 void Engine::playerInput()
 {
+	// input
 	string com1, com2;
 	bool worked = false;
 	cin >> com1 >> com2;
+	// check if command is available
 	for (auto command : availableCommands)
 	{
 		if (command == com1 + " " + com2)
@@ -54,17 +53,24 @@ void Engine::playerInput()
 			}
 		}
 		// do command
-		for (auto stuff : room->getStuff())
+		for (int i = 0 ; i < room->getStuff().size(); i++)
 		{
-			if (stuff->getName() == com2)
+			if (room->getStuff()[i]->getName() == com2)
 			{
 				if (com1 == "examine")
 				{
-					stuff->examine();
+					room->getStuff()[i]->examine();
 				}
-				else
+				else if (com1 == "take")
 				{
-					stuff->command(com1);
+					
+					player->addItem(static_cast<Item*>(room->getStuff()[i]));
+					room->getStuff()[i]->command(com1);
+					room->removeItem(i+1);
+				}
+				else 
+				{
+					room->getStuff()[i]->command(com1);
 				}
 				
 			}
@@ -74,6 +80,8 @@ void Engine::playerInput()
 
 void Engine::cycle()
 {
+
+	// clear systems
 	system("cls");
 	availableCommands.clear();
 	// interface
@@ -82,6 +90,7 @@ void Engine::cycle()
 	loadEntities();
 	cout << "---------------------" << endl;
 	
+	// input
 	bool cont = false;
 	while (!cont)
 	{
@@ -98,6 +107,7 @@ void Engine::cycle()
 		}
 	}
 
+	// pause then repeat function
 	system("pause");
 	cycle();
 }
@@ -105,16 +115,35 @@ void Engine::cycle()
 void Engine::loadEntities()
 {
 	// put inventor stuff here later
+	for (auto item : player->getInventory())
+	{
+		// examine commands
+		availableCommands.push_back("examine " + item->getName());
+		cout << availableCommands.back() << endl;
+		// actions
+		for (auto action : item->getActions())
+		{
+			if (action != "take")
+			{
+				availableCommands.push_back(action + " " + item->getName());
+				cout << availableCommands.back() << endl;
+			}
+		}
+	}
+	// entities in room
 	for (auto stuff : room->getStuff())
 	{
+		// examine commands
 		availableCommands.push_back("examine " + stuff->getName());
 		cout << availableCommands.back() << endl;
+		// actions for each entity
 		for (auto action : stuff->getActions())
 		{
 			availableCommands.push_back(action + " " + stuff->getName());
 			cout << availableCommands.back() << endl;
 		}
 	}
+	// Connecting rooms
 	for (auto door : room->getRooms())
 	{
 		availableCommands.push_back("go "+ door);

@@ -35,9 +35,9 @@ public:
 	virtual void Open();
 	virtual void Close();
 	virtual void Go();
-	virtual void Take();
 	virtual void Use();
 	virtual void Attack();
+	virtual void Take();
 	virtual void Throw();
 	virtual void Break();
 	virtual void Drink();

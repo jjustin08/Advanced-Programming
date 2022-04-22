@@ -97,10 +97,6 @@ void Entity::Go()
 	cout << "You go " << getName() << ".\n";
 }
 
-void Entity::Take()
-{
-	cout << "You take the " << getName() << ".\n";
-}
 
 void Entity::Use()
 {
@@ -109,6 +105,11 @@ void Entity::Use()
 
 void Entity::Attack()
 {
+}
+
+void Entity::Take()
+{
+	cout << "You take the " << getName() << ".\n";
 }
 
 void Entity::Throw()
