@@ -1,6 +1,0 @@
-Start Room
-This room is where you start
-leave,@
-nextroom,@
-Chair,@
-Glass,@

@@ -1,0 +1,6 @@
+Main Hall
+This is the next room ver exciting
+leave,@
+startroom,@
+painting,@
+knife,@

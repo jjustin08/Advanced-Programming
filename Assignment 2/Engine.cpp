@@ -11,12 +11,9 @@ Engine::~Engine(){}
 void Engine::start()
 {
 	constructWorld();
-	// intro setting name
-	cout << "Hello welcome\nEnter your name: ";
-	string s;
-	cin >> s;
-	player->setName(s);
-
+	story->read();
+	system("pause");
+	system("cls");
 	cycle();
 }
 
@@ -26,6 +23,9 @@ void Engine::playerInput()
 	string com1, com2;
 	bool worked = false;
 	cin >> com1 >> com2;
+	// clear screen
+	system("cls");
+	cout << "---------------------" << endl;
 	// check if command is available
 	for (auto command : availableCommands)
 	{
@@ -52,7 +52,22 @@ void Engine::playerInput()
 				}
 			}
 		}
-		// do command
+		// inventory commands
+		for (int i = 0; i < player->getInventory().size(); i++)
+		{
+			if (player->getInventory()[i]->getName() == com2)
+			{
+				if (com1 == "examine")
+				{
+					player->getInventory()[i]->examine();
+				}
+				else
+				{
+					player->getInventory()[i]->command(com1);
+				}
+			}
+		}
+		// room commands command
 		for (int i = 0 ; i < room->getStuff().size(); i++)
 		{
 			if (room->getStuff()[i]->getName() == com2)
@@ -60,6 +75,14 @@ void Engine::playerInput()
 				if (com1 == "examine")
 				{
 					room->getStuff()[i]->examine();
+					if (room->getStuff()[i]->getStuff().size() > 0)
+					{
+						for (auto item : room->getStuff()[i]->getStuff())
+						{
+							room->addStuff(item);
+						}
+						room->getStuff()[i]->getStuff().clear();
+					}
 				}
 				else if (com1 == "take")
 				{
@@ -80,12 +103,13 @@ void Engine::playerInput()
 
 void Engine::cycle()
 {
-
-	// clear systems
-	system("cls");
+	// clear system
 	availableCommands.clear();
 	// interface
-	cout << "Available commands:" << endl;
+	cout << "---------------------" << endl;
+	room->examine();
+	cout << "---------------------" << endl;
+	cout << "\nAvailable commands:" << endl;
 	cout << "---------------------" << endl;
 	loadEntities();
 	cout << "---------------------" << endl;
@@ -98,7 +122,9 @@ void Engine::cycle()
 		try
 		{
 			cout << "Enter command:" << endl;
+
 			playerInput();
+			cout << "---------------------" << endl;
 		}
 		catch (string ex)
 		{
@@ -114,7 +140,9 @@ void Engine::cycle()
 
 void Engine::loadEntities()
 {
-	// put inventor stuff here later
+	// inventory
+	if(player->getInventory().size() >0)
+	cout << "-----Inventory-----\n";
 	for (auto item : player->getInventory())
 	{
 		// examine commands
@@ -131,6 +159,7 @@ void Engine::loadEntities()
 		}
 	}
 	// entities in room
+	cout << "-----Room-----\n";
 	for (auto stuff : room->getStuff())
 	{
 		// examine commands
@@ -155,5 +184,5 @@ void Engine::constructWorld()
 {
 	player = new Player();
 	story = new Story();
-	room = new Room("Rooms/StartRoom.txt");
+	room = new Room("Rooms/Lobby.txt");
 }

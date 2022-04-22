@@ -1,5 +1,6 @@
 #include "Object.h"
 #include <fstream>
+#include "Item.h"
 
 Object::Object(string fileName)
 {
@@ -9,6 +10,7 @@ Object::Object(string fileName)
 Object::~Object()
 {
 }
+
 
 void Object::loadFile(string fileName)
 {
@@ -33,6 +35,17 @@ void Object::loadFile(string fileName)
 		file.unget();
 		getline(file, word, ',');
 		AddAction(word);
+		word = file.get();
+	}
+	// add items
+	word = file.get();
+	word = file.get();
+	while (word != "@")
+	{
+		file.unget();
+		getline(file, word, ',');
+		Item* iti = new Item("Items/" + word + ".txt");
+		addStuff(iti);
 		word = file.get();
 	}
 }

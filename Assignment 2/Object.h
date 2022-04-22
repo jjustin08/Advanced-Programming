@@ -11,6 +11,9 @@ public:
 	Object(string fileName);
 	~Object();
 
+	vector<Entity*> getStuff();
+
+
 	void loadFile(string fileName);
 };
 

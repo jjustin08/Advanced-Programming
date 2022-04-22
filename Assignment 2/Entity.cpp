@@ -14,6 +14,16 @@ Entity::~Entity()
 {
 }
 
+void Entity::addStuff(Entity* st)
+{
+	stuff.push_back(st);
+}
+
+void Entity::removeItem(int place)
+{
+	stuff.erase(stuff.begin() + place - 1);
+}
+
 void Entity::loadFile(string fileName)
 {
 	fstream file;

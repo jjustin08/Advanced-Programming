@@ -1,3 +1,4 @@
 chair
-Normal boring wood chair
+A nice leather chair
 sit,@
+@

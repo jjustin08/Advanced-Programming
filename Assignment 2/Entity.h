@@ -10,6 +10,7 @@ private:
 	string name;
 	string description;
 	vector<string> actions;
+	vector<Entity*> stuff;
 public:
 	// constructor
 	Entity();
@@ -20,11 +21,14 @@ public:
 	string getName() { return name; }
 	string getDescription() { return description; }
 	vector<string> getActions() { return actions; }
+	vector<Entity*> getStuff() { return stuff; }
 
 	// setters
 	void setName(string name) { this->name = name; }
 	void setDescription(string des) { this->description = des; }
 	void AddAction(string act) { actions.push_back(act); }
+	void addStuff(Entity*);
+	void removeItem(int place);
 
 	// public member functions
 	virtual void loadFile(string fileName);

@@ -1,0 +1,6 @@
+lobby
+You have entered the main lobby of the hotel. There is a old patterned carpet like it is from the 70's. Not to much in the room exept for reception and a couple of chairs in the corner. There are many doors and halls. one door seems like it leads into a big hall. The another into a bar or resturant manybe. Then there are 2 elavators. 
+leave,@
+MainHall,Resturant,Elavator,@
+Chair,FrontDesk,@
+@

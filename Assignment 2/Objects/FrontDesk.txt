@@ -1,0 +1,4 @@
+desk
+It is very cluttered. You see your room key underneith the clutter.
+@
+keycard,@

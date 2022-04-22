@@ -15,12 +15,6 @@ vector<string> Room::getRooms()
 	return connectingRooms;
 }
 
-vector<Entity*> Room::getStuff()
-{
-	return stuff;
-}
-
-
 
 void Room::loadFile(string fileName)
 {
@@ -86,13 +80,3 @@ void Room::addConnectionRoom(string room)
 	connectingRooms.push_back(room);
 }
 
-void Room::addStuff(Entity* st)
-{
-	stuff.push_back(st);
-}
-
-
-void Room::removeItem(int place)
-{
-	stuff.erase(stuff.begin() + place - 1);
-}

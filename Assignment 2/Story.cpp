@@ -11,7 +11,7 @@ Story::~Story()
 
 void Story::read()
 {
-	cout << para;
+	cout << para << endl;
 	getline(file, para,'@');
 }
 
