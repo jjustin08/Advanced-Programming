@@ -1,0 +1,4 @@
+curtain
+A white cutain spanning the bathtub. behind the curtain the bathtub is full of water. the water looks to have a tint of pink.
+use,@
+bathroom,bathtub,@

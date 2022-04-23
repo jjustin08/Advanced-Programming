@@ -1,0 +1,6 @@
+room217
+Looks like a ordinary hotel room. It has a bathroom, bed, and any other ordinary thing.
+leave,@
+bathroom,floor2,@
+bed,@
+@

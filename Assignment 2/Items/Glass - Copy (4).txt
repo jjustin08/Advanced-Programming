@@ -1,3 +1,0 @@
-wine
-This is a perfect glass filled to the brim with red wine
-drink,throw,take,@

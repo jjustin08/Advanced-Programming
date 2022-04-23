@@ -1,0 +1,6 @@
+elevator
+Elevator with a bunch of buttons to floors.
+leave,@
+lobby,floor2,@
+@
+@

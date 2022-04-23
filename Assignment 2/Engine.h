@@ -6,9 +6,10 @@
 #include "Player.h"
 #include "Story.h"
 #include "Room.h"
-#include "Entity.h"
 #include "LinkedList.h"
+#include "Entity.h"
 using namespace std;
+
 
 class Engine
 {
@@ -18,11 +19,15 @@ private:
 	Room* room;
 	LinkedList<Room*> visitiedRooms;
 	vector<string> availableCommands;
-	vector<int> roomNum;
+	int roomNum;
 public:
 	//constructor
 	Engine();
 	~Engine();
+	//getters
+	Room* getCurrentRoom() { return room; }
+	//setters
+	
 
 	// public member functions
 	void start();

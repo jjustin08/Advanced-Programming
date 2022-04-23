@@ -1,6 +1,6 @@
-MainHall
+mainhall
 A huge emptry room with a giant twin staircase, and a desk on the stage.
 leave,@
-lobby,Stairwell,@
+lobby,stairwell,@
 desk,@
 @

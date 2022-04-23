@@ -1,0 +1,6 @@
+bathroom
+there is a sink, toilet and a bathtub. for some reason the bathtub curtains are drawn.
+leave,@
+bathtub,@
+@
+curtain,@

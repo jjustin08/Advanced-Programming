@@ -2,8 +2,9 @@
 #include <fstream>
 #include "Item.h"
 
-Object::Object(string fileName)
+Object::Object(string fileName, Engine* eng)
 {
+	setEngine(eng);
 	loadFile(fileName);
 }
 
@@ -44,7 +45,7 @@ void Object::loadFile(string fileName)
 	{
 		file.unget();
 		getline(file, word, ',');
-		Item* iti = new Item("Items/" + word + ".txt");
+		Item* iti = new Item("Items/" + word + ".txt",getEngine());
 		addStuff(iti);
 		word = file.get();
 	}

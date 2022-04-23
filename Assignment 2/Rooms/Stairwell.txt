@@ -1,6 +1,6 @@
-Main Hall
-This is the next room ver exciting
+stairwell
+Red carpet stairs lead up to the second floor.
 leave,@
-startroom,@
-painting,@
-knife,@
+mainhall,floor2,@
+@
+@

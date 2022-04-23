@@ -2,6 +2,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
+
+class Engine;
+
 using namespace std;
 
 class Entity
@@ -11,10 +14,11 @@ private:
 	string description;
 	vector<string> actions;
 	vector<Entity*> stuff;
+	Engine* m_engine;
 public:
 	// constructor
 	Entity();
-	Entity(string file);
+	Entity(string file,Engine* eng);
 	~Entity();
 
 	// getters
@@ -22,6 +26,7 @@ public:
 	string getDescription() { return description; }
 	vector<string> getActions() { return actions; }
 	vector<Entity*> getStuff() { return stuff; }
+	Engine* getEngine() { return m_engine; }
 
 	// setters
 	void setName(string name) { this->name = name; }
@@ -29,6 +34,7 @@ public:
 	void AddAction(string act) { actions.push_back(act); }
 	void addStuff(Entity*);
 	void removeItem(int place);
+	void setEngine(Engine* eng);
 
 	// public member functions
 	virtual void loadFile(string fileName);

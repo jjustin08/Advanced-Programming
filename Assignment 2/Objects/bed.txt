@@ -1,0 +1,4 @@
+bed
+The bed looks very clean and comfy. When you look closer though there seems to be a red stain one the pillow.
+sit,@
+@

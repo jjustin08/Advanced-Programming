@@ -41,30 +41,33 @@ void Engine::playerInput()
 	}
 	if (worked)
 	{
-		// go to new room
-		if (com1 == "go")
+		// room commands command
+		for (int i = 0; i < room->getStuff().size(); i++)
 		{
-			bool roomChose = false;
-			for (int i = 0; visitiedRooms.findNode(i) != nullptr; i++)
+			if (room->getStuff()[i]->getName() == com2)
 			{
-				if (visitiedRooms.findNode(i)->getName() == com2)
+				if (com1 == "examine")
 				{
-					room = visitiedRooms.findNode(i);
-					roomChose = true;
-					continue;
-				}
-			}
-			if (!roomChose)
-			{
-				for (auto door : room->getRooms())
-				{
-					if (com2 == door)
+					room->getStuff()[i]->examine();
+					// if hiden item in object
+					for (int x = 0; x < room->getStuff()[i]->getStuff().size(); x++)
 					{
-						visitiedRooms.add(new Room("Rooms/" + door + ".txt"));
-						roomNum.push_back(roomNum[roomNum.size() - 1] +1);
-						room = visitiedRooms.findNode(roomNum.size() -1);
+						room->addStuff(room->getStuff()[i]->getStuff()[x]);
+						room->getStuff()[i]->removeItem(x + 1);
 					}
 				}
+				else if (com1 == "take")
+				{
+
+					player->addItem(static_cast<Item*>(room->getStuff()[i]));
+					room->getStuff()[i]->command(com1);
+					room->removeItem(i + 1);
+				}
+				else
+				{
+					room->getStuff()[i]->command(com1);
+				}
+
 			}
 		}
 		// inventory commands
@@ -82,35 +85,39 @@ void Engine::playerInput()
 				}
 			}
 		}
-		// room commands command
-		for (int i = 0 ; i < room->getStuff().size(); i++)
+		// go to room
+		if (com1 == "go")
 		{
-			if (room->getStuff()[i]->getName() == com2)
+			cout << "You go to " << com2 << endl;
+			bool roomChose = false;
+			// old room
+			for (int i = 0; visitiedRooms.findNode(i) != nullptr; i++)
 			{
-				if (com1 == "examine")
-				{
-					room->getStuff()[i]->examine();
-					// if hiden item in object
-					for (int x = 0; x < room->getStuff()[i]->getStuff().size(); x++)
-					{
-						room->addStuff(room->getStuff()[i]->getStuff()[x]);
-						room->getStuff()[i]->removeItem(x+1);
-					}
-				}
-				else if (com1 == "take")
+				if (visitiedRooms.findNode(i)->getName() == com2)
 				{
 					
-					player->addItem(static_cast<Item*>(room->getStuff()[i]));
-					room->getStuff()[i]->command(com1);
-					room->removeItem(i+1);
+					room = visitiedRooms.findNode(i);
+					roomChose = true;
+					continue;
 				}
-				else 
+			}
+			// new room
+			if (!roomChose)
+			{
+				for (auto door : room->getRooms())
 				{
-					room->getStuff()[i]->command(com1);
+					if (com2 == door)
+					{
+						
+						visitiedRooms.add(new Room("Rooms/" + door + ".txt",this));
+						roomNum += 1;
+						room = visitiedRooms.findNode(roomNum);
+					}
 				}
-				
 			}
 		}
+		
+		
 	}
 }
 
@@ -191,8 +198,8 @@ void Engine::constructWorld()
 {
 	player = new Player();
 	story = new Story();
-	visitiedRooms.add(new Room("Rooms/Lobby.txt"));
+	// linked list of rooms
+	visitiedRooms.add(new Room("Rooms/Lobby.txt",this));
 	room = visitiedRooms.findNode(0);
-	roomNum.push_back(0);
-	//room = new Room("Rooms/Lobby.txt");
+	roomNum = 0;
 }

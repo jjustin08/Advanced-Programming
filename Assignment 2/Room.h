@@ -10,7 +10,7 @@ class Room : public Entity
 private:
 	vector<string> connectingRooms;
 public:
-	Room(string fileName);
+	Room(string fileName, Engine* eng);
 	~Room();
 	// getters
 	vector<string> getRooms();

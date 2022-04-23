@@ -1,0 +1,6 @@
+floor2
+a hall with alot of doors to hotel rooms including the room 217.
+leave,@
+elevator,stairway,@
+@
+@

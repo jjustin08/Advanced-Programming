@@ -5,8 +5,9 @@ Entity::Entity()
 {
 }
 
-Entity::Entity(string file)
+Entity::Entity(string file, Engine* eng)
 {
+	m_engine = eng;
 	loadFile(file);
 }
 
@@ -22,6 +23,11 @@ void Entity::addStuff(Entity* st)
 void Entity::removeItem(int place)
 {
 	stuff.erase(stuff.begin() + place - 1);
+}
+
+void Entity::setEngine(Engine* eng)
+{
+	m_engine = eng;
 }
 
 void Entity::loadFile(string fileName)

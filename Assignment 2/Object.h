@@ -8,10 +8,10 @@ class Object : public Entity
 private:
 
 public:
-	Object(string fileName);
+	Object(string fileName, Engine* eng);
 	~Object();
 
-	vector<Entity*> getStuff();
+	//vector<Entity*> getStuff();
 
 
 	void loadFile(string fileName);

@@ -1,8 +1,9 @@
 #include "Room.h"
 #include <fstream>
 
-Room::Room(string fileName)
+Room::Room(string fileName, Engine* eng)
 {
+	setEngine(eng);
 	loadFile(fileName);
 }
 
@@ -58,7 +59,7 @@ void Room::loadFile(string fileName)
 	{
 		file.unget();
 		getline(file, word, ',');
-		Object* obj = new Object("Objects/" + word +".txt");
+		Object* obj = new Object("Objects/" + word +".txt", getEngine());
 		addStuff(obj);
 		word = file.get();
 	}
@@ -69,7 +70,7 @@ void Room::loadFile(string fileName)
 	{
 		file.unget();
 		getline(file, word, ',');
-		Item* iti = new Item("Items/" + word + ".txt");
+		Item* iti = new Item("Items/" + word + ".txt", getEngine());
 		addStuff(iti);
 		word = file.get();
 	}
