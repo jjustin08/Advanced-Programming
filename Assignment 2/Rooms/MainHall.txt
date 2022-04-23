@@ -1,6 +1,6 @@
-Main Hall
-This is the next room ver exciting
+MainHall
+A huge emptry room with a giant twin staircase, and a desk on the stage.
 leave,@
-startroom,@
-painting,@
-knife,@
+lobby,Stairwell,@
+desk,@
+@

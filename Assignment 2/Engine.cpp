@@ -44,11 +44,26 @@ void Engine::playerInput()
 		// go to new room
 		if (com1 == "go")
 		{
-			for (auto door : room->getRooms())
+			bool roomChose = false;
+			for (int i = 0; visitiedRooms.findNode(i) != nullptr; i++)
 			{
-				if (com2 == door)
+				if (visitiedRooms.findNode(i)->getName() == com2)
 				{
-					room = new Room("Rooms/" +door+ ".txt");
+					room = visitiedRooms.findNode(i);
+					roomChose = true;
+					continue;
+				}
+			}
+			if (!roomChose)
+			{
+				for (auto door : room->getRooms())
+				{
+					if (com2 == door)
+					{
+						visitiedRooms.add(new Room("Rooms/" + door + ".txt"));
+						roomNum.push_back(roomNum[roomNum.size() - 1] +1);
+						room = visitiedRooms.findNode(roomNum.size() -1);
+					}
 				}
 			}
 		}
@@ -75,13 +90,11 @@ void Engine::playerInput()
 				if (com1 == "examine")
 				{
 					room->getStuff()[i]->examine();
-					if (room->getStuff()[i]->getStuff().size() > 0)
+					// if hiden item in object
+					for (int x = 0; x < room->getStuff()[i]->getStuff().size(); x++)
 					{
-						for (auto item : room->getStuff()[i]->getStuff())
-						{
-							room->addStuff(item);
-						}
-						room->getStuff()[i]->getStuff().clear();
+						room->addStuff(room->getStuff()[i]->getStuff()[x]);
+						room->getStuff()[i]->removeItem(x+1);
 					}
 				}
 				else if (com1 == "take")
@@ -115,22 +128,16 @@ void Engine::cycle()
 	cout << "---------------------" << endl;
 	
 	// input
-	bool cont = false;
-	while (!cont)
+	try
 	{
-		cont = true;
-		try
-		{
-			cout << "Enter command:" << endl;
+		cout << "Enter command:" << endl;
 
-			playerInput();
-			cout << "---------------------" << endl;
-		}
-		catch (string ex)
-		{
-			cout << ex;
-			cont = false;
-		}
+		playerInput();
+		cout << "---------------------" << endl;
+	}
+	catch (string ex)
+	{
+		cout << ex;
 	}
 
 	// pause then repeat function
@@ -141,7 +148,7 @@ void Engine::cycle()
 void Engine::loadEntities()
 {
 	// inventory
-	if(player->getInventory().size() >0)
+	if(player->getInventory().size() > 0)
 	cout << "-----Inventory-----\n";
 	for (auto item : player->getInventory())
 	{
@@ -184,5 +191,8 @@ void Engine::constructWorld()
 {
 	player = new Player();
 	story = new Story();
-	room = new Room("Rooms/Lobby.txt");
+	visitiedRooms.add(new Room("Rooms/Lobby.txt"));
+	room = visitiedRooms.findNode(0);
+	roomNum.push_back(0);
+	//room = new Room("Rooms/Lobby.txt");
 }
